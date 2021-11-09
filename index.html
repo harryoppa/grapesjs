@@ -199,13 +199,14 @@
     </div>
     <script src="grapesjs.min.js"></script>
     <script src="https://unpkg.com/grapesjs-tui-image-editor"></script>
-    <script src="https://cdn.jsdelivr.net/npm/grapesjs-blocks-basic@0.1.8/dist/grapesjs-blocks-basic.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/grapesjs-navbar@0.1.5/dist/grapesjs-navbar.min.js"></script>
     <script src="https://unpkg.com/grapesjs-style-bg"></script>
     <script src="https://unpkg.com/grapesjs-typed"></script>
     <script src="https://cdn.jsdelivr.net/npm/grapesjs-component-countdown@0.1.3/dist/grapesjs-component-countdown.min.js"></script>
     <script src="plugins/grapesjs-hanbiro.min.js"></script>
     <script src="plugins/hanbiro-image.min.js"></script>
+    <script src="plugins/present.min.js"></script>
+    <script src="plugins/block.min.js"></script>
 
     <script type="text/javascript">
 
@@ -218,16 +219,17 @@
         container: '#gjs',
         height: '100%',
         fromElement: true,
-        storageManager: { autoload: 0 },
+        storageManager: { autoload: 1 },
 
-        plugins: [
-          'gjs-blocks-basic',
+        plugins: [,
+          'plugins/block',
           'gjs-navbar',
           'grapesjs-style-bg',
           'grapesjs-typed',
           'grapesjs-component-countdown',
           'plugins/grapesjs-hanbiro',
           'plugins/hanbiro-image',
+                'plugins/present'
         ],
 
         canvas: {
@@ -266,17 +268,39 @@
         },
       });
 
-      editor.BlockManager.add('testBlock', {
-        label: 'Block',
-        attributes: { class:'gjs-fonts gjs-f-b1' },
-        content: `<div style="padding-top:50px; padding-bottom:50px; text-align:center">
+      // editor.BlockManager.add('testBlock', {
+      //   label: 'Block',
+      //   attributes: { class:'gjs-fonts gjs-f-b1' },
+      //   content: `<div style="padding-top:50px; padding-bottom:50px; text-align:center">
+      //
+      //       <div class="mb-3">
+      //          <input type="text" class="form-control" />
+      //       </div>
+      //
+      //   </div>`
+      // })
 
-            <div class="mb-3">
-               <input type="text" class="form-control" />
-            </div>
-
-        </div>`
-      })
+      var pn = editor.Panels;
+      var modal = editor.Modal;
+      var cmdm = editor.Commands;
+      cmdm.add('canvas-clear', function() {
+        if(confirm('Areeee you sure to clean the canvas?')) {
+          var comps = editor.DomComponents.clear();
+          setTimeout(function(){ localStorage.clear()}, 0)
+        }
+      });
+      cmdm.add('set-device-desktop', {
+        run: function(ed) { ed.setDevice('Desktop') },
+        stop: function() {},
+      });
+      cmdm.add('set-device-tablet', {
+        run: function(ed) { ed.setDevice('Tablet') },
+        stop: function() {},
+      });
+      cmdm.add('set-device-mobile', {
+        run: function(ed) { ed.setDevice('Mobile portrait') },
+        stop: function() {},
+      });
     </script>
   </body>
 </html>

@@ -12,6 +12,8 @@ export default ({ config }) => {
       grapesjs: config.entry,
       'plugins/grapesjs-hanbiro': `${rootDir}/plugins/hanbiro/src/index`,
       'plugins/hanbiro-image': `${rootDir}/plugins/image/src/index`,
+      'plugins/present': `${rootDir}/plugins/present/src/index`,
+      'plugins/block': `${rootDir}/plugins/block/src/index`,
     },
     output: {
       ...config.output,

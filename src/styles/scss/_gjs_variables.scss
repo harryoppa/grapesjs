@@ -20,20 +20,22 @@ $cui-cls:        $app-prefix + 'cui' !default;
   With this should be easier to overwrite colors
   not only in SCSS but even CSS
 */
-$primaryColor:      #444 !default;
-$secondaryColor:    #ddd !default;
-$tertiaryColor:     #804f7b !default;
-$quaternaryColor:   #d278c9 !default;
+$primaryColor: #ffffff !default;
+$secondaryColor: #888 !default;
+$tertiaryColor: #429bff !default;
+$quaternaryColor:   #007bff !default;
+
+$borderRadius: 5px;
 
 /* Dark theme */
 $mainColor:         #444 !default; /* Light: #573454 Dark: #3b2639 -moz-linear-gradient(top, #fca99b 0%, #6e2842 100%) */
 $fontColor:         #ddd !default; /* l: #d8d7db */
 $fontColorActive:   #f8f8f8 !default;
 
-$mainDkColor:       rgba(0, 0, 0, 0.2) !default;/* darken($mainColor, 4%) - #383838 */
-$mainDklColor:      rgba(0, 0, 0, 0.1) !default;
+$mainDkColor:       #f2f2f2 !default;/* darken($mainColor, 4%) - #383838 */
+$mainDklColor:      #f4f5f8 !default;
 $mainLhColor:       rgba(255, 255, 255, 0.1) !default; /* #515151 */
-$mainLhlColor:      rgba(255, 255, 255, 0.7) !default;
+$mainLhlColor:      #000 !default;
 $fontColorDk:       #777 !default;
 $colorBlue:         #3b97e3 !default;
 $colorRed:          #dd3636 !default;
@@ -52,7 +54,7 @@ $colorWarn:         #ffca6f !default;
 $hndlMargin:        -5px !default;
 
 /* Components / Inputs */
-$lightBorder:       rgba(255, 255, 255, 0.05) !default;
+$lightBorder:       #f2f2f2 !default;
 $inputFontColor:    $mainLhlColor !default; /* #d5d5d5 */
 $arrowColor:        $mainLhlColor !default; /* b1b1b1 */
 $darkTextShadow:    $mainDkColor !default; /* #252525 */
