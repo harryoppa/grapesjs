@@ -53,7 +53,7 @@ export default function(editor, opt = {}) {
         tagName: 'form',
         droppable: ':not(form)',
         draggable: ':not(form)',
-        attributes: { method: 'get' },
+        attributes: { method: 'get', class: 'p-3' },
         traits: [{
           type: 'select',
           name: 'method',
