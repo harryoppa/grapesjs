@@ -15,6 +15,8 @@ import styles from './styles';
 export default (editor, opts = {}) => {
   let config = opts;
 
+  console.log('opts', opts)
+
   let defaults = {
     // Which blocks to add
     blocks: ['link-block', 'quote', 'text-basic'],
@@ -129,6 +131,6 @@ export default (editor, opts = {}) => {
   panels(editor, config);
 
   // // Load styles
-  // styles(editor, config);
+  styles(editor, config);
 
 };
