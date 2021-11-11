@@ -2975,10 +2975,6 @@ caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
 
-cash-dom@^2.3.9:
-  version "2.3.9"
-  resolved "https://registry.yarnpkg.com/cash-dom/-/cash-dom-2.3.9.tgz#ff2e29cf3b3202e62596e1e8bb52edb95ea79fec"
-
 ccount@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ccount/-/ccount-1.1.0.tgz#246687debb6014735131be8abab2d93898f8d043"
@@ -5407,6 +5403,11 @@ grapesjs-cli@^2.0.0:
     webpack-dev-server "^3.11.2"
     yargs "^16.2.0"
 
+grapick@^0.1.13:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/grapick/-/grapick-0.1.13.tgz#075813a5a79003ce6523df39718e5ec618651599"
+  integrity sha512-2v7DdmXKbl9+GsL2ZRl2qEMD+PeczYJBSifwx+5SGbaSh0pZ+b6GLya87cBfN953wwXsZqyzuSVPBzqRz8F12g==
+
 gray-matter@^4.0.1:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/gray-matter/-/gray-matter-4.0.3.tgz#e893c064825de73ea1f5f7d88c7a9f7274288798"
@@ -6747,6 +6748,11 @@ jest@^24.9.0:
   dependencies:
     import-local "^2.0.0"
     jest-cli "^24.9.0"
+
+jquery@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
+  integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"

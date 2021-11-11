@@ -6,3 +6,13 @@ $primaryColor: #463a3c;
 $secondaryColor: #b9a5a6;
 $tertiaryColor: #804f7b;
 $quaternaryColor: #d97aa6;
+
+$grp-pfx: 'grp-' !default;
+
+$grp-close-dim: 15px !default;
+$grp-cp-dim: $grp-close-dim !default;
+$grp-stop-bg: white !default;
+$grp-cp-border: 3px solid $grp-stop-bg !default;
+$grp-stop-radius: 100% !default;
+$grp-stop-shadow: 0 2px 10px rgba(0, 0, 0, 0.25) !default;
+$grp-preview-bg: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==";

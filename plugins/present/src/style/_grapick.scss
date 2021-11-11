@@ -1,0 +1,79 @@
+.#{$grp-pfx} {
+  &wrapper {
+    background-image: url($grp-preview-bg);
+  }
+
+  &preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+  }
+
+  &handler {
+    width: 4px;
+    margin-left: -2px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    height: 100%;
+
+    &-close {
+      color: rgba(0, 0, 0, 0.4);
+      border-radius: $grp-stop-radius;
+      box-shadow: $grp-stop-shadow;
+      background-color: $grp-stop-bg;
+      text-align: center;
+      width: $grp-close-dim;
+      height: $grp-close-dim;
+      margin-left: -($grp-close-dim * 0.333);
+      line-height: 10px;
+      font-size: 21px;
+      cursor: pointer;
+
+      &-c {
+        position: absolute;
+        top: -($grp-close-dim + 2px);
+      }
+    }
+
+    &-drag {
+      background-color: rgba(0, 0, 0, 0.5);
+      cursor: col-resize;
+      width: 100%;
+      height: 100%;
+
+      .#{$grp-pfx}handler-selected & {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    &-cp {
+      &-c {
+        display: none;
+
+        .#{$grp-pfx}handler-selected & {
+          display: block;
+        }
+      }
+
+      &-wrap {
+        width: $grp-cp-dim;
+        height: $grp-cp-dim;
+        margin-left: -($grp-cp-dim * 0.5 + 0.5px);
+        border: $grp-cp-border;
+        box-shadow: $grp-stop-shadow;
+        overflow: hidden;
+        border-radius: $grp-stop-radius;
+        cursor: pointer;
+
+        input[type=color] {
+          opacity: 0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
