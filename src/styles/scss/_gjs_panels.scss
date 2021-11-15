@@ -7,6 +7,12 @@
     padding: 9px;
     z-index: 3;
 
+    &[class*="commands"],
+    &[class*="options"],
+    &[class*="devices"] {
+      background-color: #f2f2f2;
+    }
+
     .icon-undo,
     .icon-redo {
       font-size: 20px;
@@ -33,9 +39,18 @@
     width: $leftWidth;
     z-index: 4;
 
+    .#{$pn-prefix}buttons {
+      height: 55px;
+      border-bottom: 1px solid #e9e9e9;
+
+      .#{$pn-prefix}btn {
+        border: none !important;
+      }
+    }
+
     &-container {
       height: 100%;
-      padding: 42px 0 0;
+      padding: 55px 0 0;
       right: 0;
       width: $leftWidth;
       overflow: auto;
@@ -51,19 +66,28 @@
 
   &btn {
     box-sizing: border-box;
-    min-height: 30px;
-    min-width: 30px;
+    min-height: 35px;
+    min-width: 40px;
     line-height: 21px;
     background-color: transparent;
-    border: none;
+    border: 1px solid #e9e9e9;
     font-size: 18px;
     margin-right: 5px;
-    border-radius: 2px;
     padding: 4px;
     position: relative;
     cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    &.#{$pn-prefix}active {
+    &:hover {
+      background-color: #ccc;
+    }
+  }
+
+
+  &.#{$pn-prefix}active {
       background-color: $mainDkColor;
       border-radius: $borderRadius;
     }
@@ -72,4 +96,4 @@
       fill: currentColor;
     }
   }
-}
+
