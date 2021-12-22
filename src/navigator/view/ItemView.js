@@ -7,6 +7,9 @@ import { eventDrag } from 'dom_components/model/Component';
 const inputProp = 'contentEditable';
 const styleOpts = { mediaText: '' };
 const $ = Backbone.$;
+const isStyleHidden = (style = {}) => {
+  return (style.display || '').trim().indexOf('none') === 0;
+};
 let ItemsView;
 
 export default Backbone.View.extend({
@@ -122,7 +125,7 @@ export default Backbone.View.extend({
     const model = this.model;
     const hClass = `${pfx}layer-hidden`;
     const hideIcon = 'fa-eye-slash';
-    const hidden = model.getStyle(styleOpts).display === 'none';
+    const hidden = isStyleHidden(model.getStyle(styleOpts));
     const method = hidden ? 'addClass' : 'removeClass';
     this.$el[method](hClass);
     this.getVisibilityEl()[method](hideIcon);
@@ -141,7 +144,7 @@ export default Backbone.View.extend({
     const prevDisplay = model.get(prevDspKey);
     const style = model.getStyle(styleOpts);
     const { display } = style;
-    const hidden = display == 'none';
+    const hidden = isStyleHidden(style);
 
     if (hidden) {
       delete style.display;
@@ -332,9 +335,7 @@ export default Backbone.View.extend({
    * @return boolean
    * */
   isVisible() {
-    const { display } = this.model.getStyle();
-
-    return !(display && display === 'none');
+    return !isStyleHidden(this.model.getStyle());
   },
 
   /**
