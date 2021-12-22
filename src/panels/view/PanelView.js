@@ -127,6 +127,8 @@ export default Backbone.View.extend({
         collection: this.buttons,
         config: this.config
       });
+
+      console.log('buttons.render', buttons.render);
       $el.append(buttons.render().el);
     }
 
