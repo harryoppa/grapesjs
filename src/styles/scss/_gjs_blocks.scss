@@ -51,10 +51,6 @@
     background-color: #f2f2f2;
   }
 
-  svg {
-    fill: currentColor;
-  }
-
   &__media {
     margin-bottom: 10px;
     pointer-events: none;
@@ -63,6 +59,7 @@
   svg {
     width: 4em;
     height: 4em;
+    stroke-width: 1px !important;
   }
 }
 

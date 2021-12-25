@@ -56,8 +56,6 @@ export default function(editor, opt = {}) {
     width: 70%;
   }`;
 
-  console.log('styleRow', styleRow)
-
   const step = 0.2;
   const minDim = 1;
   const currentUnit = 1;
@@ -131,11 +129,13 @@ export default function(editor, opt = {}) {
   const attrsRow = attrsToString(rowAttr);
   const attrsCell = attrsToString(colAttr);
 
+  const columnCategory = { id: 'columns', label: 'Columns' };
+
   toAdd('column1') &&
     bm.add('column1', {
       label: c.labelColumn1,
-      category: c.category,
-      attributes: { class: 'gjs-fonts gjs-f-b1' },
+      category: columnCategory,
+      media: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22,20H2V4h20V20z"></path></svg>',
       content: `<div ${attrsRow}>
         <div ${attrsCell}></div>
       </div>
@@ -152,8 +152,8 @@ export default function(editor, opt = {}) {
   toAdd('column2') &&
     bm.add('column2', {
       label: c.labelColumn2,
-      attributes: { class: 'gjs-fonts gjs-f-b2' },
-      category: c.category,
+      media: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10,20H2V4h8V20z M22,4h-8v16h8V4z"></path></svg>',
+      category: columnCategory,
       content: `<div ${attrsRow}>
         <div ${attrsCell}></div>
         <div ${attrsCell}></div>
@@ -171,8 +171,8 @@ export default function(editor, opt = {}) {
   toAdd('column3') &&
     bm.add('column3', {
       label: c.labelColumn3,
-      category: c.category,
-      attributes: { class: 'gjs-fonts gjs-f-b3' },
+      category: columnCategory,
+      media: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6,20H2V4h4V20z M14,4h-4v16h4V4z M22,4h-4v16h4V4z"></path></svg>',
       content: `<div ${attrsRow}>
         <div ${attrsCell}></div>
         <div ${attrsCell}></div>
@@ -191,8 +191,8 @@ export default function(editor, opt = {}) {
   toAdd('column3-7') &&
     bm.add('column3-7', {
       label: c.labelColumn37,
-      category: c.category,
-      attributes: { class: 'gjs-fonts gjs-f-b37' },
+      category: columnCategory,
+      media: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8,20H2V4h6V20z M22,4H12v16h10V4z"></path></svg>',
       content: `<div ${attrsRow}>
         <div ${attrsCell} style='${
         flexGrid ? 'flex-basis' : 'width'
@@ -213,11 +213,36 @@ export default function(editor, opt = {}) {
       }`
     });
 
+  toAdd('column7-3') &&
+  bm.add('column7-3', {
+    label: c.labelColumn73,
+    category: columnCategory,
+    media: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16,4h6v16h-6V4z M2,20h10V4 H2V20z"></path></svg>',
+    content: `<div ${attrsRow}>
+        <div ${attrsCell} style='${
+      flexGrid ? 'flex-basis' : 'width'
+    }: 70%;'></div>
+        <div ${attrsCell} style='${
+      flexGrid ? 'flex-basis' : 'width'
+    }: 30%;'></div>
+      </div>
+      ${
+      basicStyle
+        ? `<style>
+          ${styleRow}
+          ${styleClm}
+          ${styleClm30}
+          ${styleClm70}
+        </style>`
+        : ''
+    }`
+  });
+
   toAdd('text') &&
     bm.add('text', {
       label: c.labelText,
       category: c.category,
-      attributes: { class: 'gjs-fonts gjs-f-text' },
+      media: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>',
       content: {
         type: 'text',
         content: 'Insert your text here',
@@ -230,7 +255,7 @@ export default function(editor, opt = {}) {
     bm.add('link', {
       label: c.labelLink,
       category: c.category,
-      attributes: { class: 'fa fa-link' },
+      media: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>',
       content: {
         type: 'link',
         content: 'Link',
@@ -242,7 +267,7 @@ export default function(editor, opt = {}) {
     bm.add('image', {
       label: c.labelImage,
       category: c.category,
-      attributes: { class: 'gjs-fonts gjs-f-image' },
+      media: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>',
       content: {
         style: { color: 'black' },
         type: 'image',
@@ -254,7 +279,7 @@ export default function(editor, opt = {}) {
     bm.add('video', {
       label: c.labelVideo,
       category: c.category,
-      attributes: { class: 'fa fa-youtube-play' },
+      media: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>',
       content: {
         type: 'video',
         src: 'img/video2.webm',
@@ -269,7 +294,7 @@ export default function(editor, opt = {}) {
     bm.add('map', {
       label: c.labelMap,
       category: c.category,
-      attributes: { class: 'fa fa-map-o' },
+      media: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>',
       content: {
         type: 'map',
         style: { height: '350px' }

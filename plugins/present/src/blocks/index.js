@@ -5,7 +5,7 @@ export default (editor, config) => {
   toAdd('link-block') && bm.add('link-block', {
     category: 'Basic',
     label: 'Link Block',
-    attributes: { class: 'fa fa-link' },
+    media: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link-2"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg>',
     content: {
       type:'link',
       editable: false,
@@ -22,7 +22,7 @@ export default (editor, config) => {
   toAdd('quote') && bm.add('quote', {
     label: 'Quote',
     category: 'Basic',
-    attributes: { class: 'fa fa-quote-right' },
+    media: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>',
     content: `<blockquote class="quote">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore ipsum dolor sit
       </blockquote>`

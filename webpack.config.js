@@ -14,7 +14,8 @@ export default ({ config }) => {
       'plugins/hanbiro-image': `${rootDir}/plugins/image/src/index`,
       'plugins/present': `${rootDir}/plugins/present/src/index`,
       'plugins/block': `${rootDir}/plugins/block/src/index`,
-      'plugins/custom-code': `${rootDir}/plugins/custom-code/src/index`
+      'plugins/custom-code': `${rootDir}/plugins/custom-code/src/index`,
+      'plugins/countdown': `${rootDir}/plugins/countdown/src/index`
     },
     output: {
       ...config.output,
